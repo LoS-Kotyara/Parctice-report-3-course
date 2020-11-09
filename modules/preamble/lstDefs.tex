@@ -1,0 +1,100 @@
+\lstdefinelanguage{JavaScript}{
+  morekeywords=[1]{break, continue, delete, else, for, function, if, in,
+      new, return, this, typeof, var, void, while, with},
+  morekeywords=[2]{false, null, true, boolean, number, undefined,
+      Array, Boolean, Date, Math, Number, String, Object},
+  morekeywords=[3]{eval, parseInt, parseFloat, escape, unescape},
+  sensitive,
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morecomment=[s]{/**}{*/},
+  morestring=[b]',
+  morestring=[b]"
+}[keywords, comments, strings]
+
+\lstdefinelanguage[ECMAScript2015]{JavaScript}[]{JavaScript}{
+  morekeywords=[1]{await, async, case, catch, class, const, default, do,
+      enum, export, extends, finally, from, implements, import, instanceof,
+      let, static, super, switch, throw, try},
+  morestring=[b]`
+}
+
+\lstalias[]{ES6}[ECMAScript2015]{JavaScript}
+
+\definecolor{mediumgray}{rgb}{0.37, 0.37, 0.37}
+\definecolor{mediumblue}{rgb}{0.09, 0.09, 0.09}
+\definecolor{forestgreen}{rgb}{0.38, 0.38, 0.38}
+\definecolor{darkviolet}{rgb}{0.26, 0.26, 0.26}
+\definecolor{royalblue}{rgb}{0.41, 0.41, 0.41} % keywords
+\definecolor{crimson}{rgb}{0.75, 0.75, 0.75}
+
+\lstdefinestyle{JSES6Base}{
+  backgroundcolor=\color{white},
+  basicstyle=\ttfamily,
+  breakatwhitespace=false,
+  breaklines=false,
+  captionpos=t,
+  columns=fullflexible,
+  commentstyle=\color{mediumgray}\upshape,
+  emph={},
+  emphstyle=\color{crimson},
+  extendedchars=true,
+  fontadjust=true,
+  frame=t,
+  identifierstyle=\color{black},
+  keepspaces=true,
+  keywordstyle=\color{royalblue},
+  keywordstyle={[2]\color{darkviolet}},
+  keywordstyle={[3]\color{royalblue}},
+  numbers=left,
+  numbersep=9pt,
+  numberstyle=\footnotesize\color{black},
+  rulecolor=\color{black},
+  showlines=true,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stringstyle=\color{forestgreen},
+  tabsize=2,
+  title=\lstname,
+  upquote=true,
+  texcl=true,
+}
+
+\lstdefinestyle{JavaScript}{
+  language=JavaScript,
+  style=JSES6Base
+}
+\lstdefinestyle{ES6}{
+  language=ES6,
+  style=JSES6Base
+}
+
+
+\lstdefinelanguage{json}{
+basicstyle=\footnotesize\ttfamily,
+numbers=none,
+numberstyle=\scriptsize,
+stepnumber=1,
+numbersep=8pt,
+showstringspaces=false,
+breaklines=true,
+frame=l,
+literate=
+*{0}{{{0}}}{1}
+{1}{{{1}}}{1}
+{2}{{{2}}}{1}
+{3}{{{3}}}{1}
+{4}{{{4}}}{1}
+{5}{{{5}}}{1}
+{6}{{{6}}}{1}
+{7}{{{7}}}{1}
+{8}{{{8}}}{1}
+{9}{{{9}}}{1}
+{:}{{{{:}}}}{1}
+{,}{{{{,}}}}{1}
+{\{}{{{{\{}}}}{1}
+{\}}{{{{\}}}}}{1}
+{[}{{{{[}}}}{1}
+{]}{{{{]}}}}{1},
+}

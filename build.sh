@@ -66,7 +66,16 @@ mkdir -p tempFiles
 
 mv $file_name.pdf $file_name.pdf1
 
-pdflatex -synctex=1 -interaction=nonstopmode --shell-escape -output-directory=tempFiles $file_name.tex >log
+echo -e "Generating a document with question marks in place of unknown references\n" > log
+pdflatex -synctex=1 -interaction=nonstopmode --shell-escape -output-directory=tempFiles $file_name.tex >> log
+
+echo -e "\nParsing all the .bib files that were included in the article and generating metainformation regarding references\n" >>log
+bibtex tempFiles/$file_name >> log
+
+echo -e "\nGenerating document with all the references in the correct places\n" >> log
+pdflatex -synctex=1 -interaction=nonstopmode --shell-escape -output-directory=tempFiles $file_name.tex >>log
+
+echo -e "\nIf adding references broke page numbering somewhere\n" >>log
 pdflatex -synctex=1 -interaction=nonstopmode --shell-escape -output-directory=tempFiles $file_name.tex >>log
 
 if [[ ! -f ./tempFiles/$file_name.pdf ]]; then
