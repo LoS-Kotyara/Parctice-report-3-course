@@ -1,9 +1,23 @@
-\subsection{Разработка визуального интерфейса программы}
+\subsection{Оптимизация визуального интерфейса программы}
 
-Визуальный интерфейс разрабатывался с использованием библиотеки React. Для подключения React к странице приложения, необходимо создать корневой элемент приложения (с id равным ``root''), к которому с помощью тега ``script'' будет подключаться библиотека и сгенерированное React-приложение. В листинге~\ref{lst:reactHTML} приведён код HTML-страницы, к которой производится подключение; код React-приложения приведен в листингах~\ref{lst:reacMain},~\ref{lst:reactSub}.
+Ввиду того, что для оптимизации интерфейса приложения было принято решение отказаться от фреймворка Vue, интерфейс приложения разрабатывался с самого начала.
 
-% \newpage
+Разработка происходила с использованием библиотеки React. Для подключения React к странице приложения, необходимо создать корневой элемент приложения (с id равным ``root''), к которому с помощью тега ``script'' будет подключаться библиотека и сгенерированное React-приложение. Подключение представлено на рисунке~\ref{img:reactHTML}
 
-\lstinputlisting[style=ES6, caption={HTML-документ}, label = {lst:reactHTML}]{assets/listings/practical/reactHTML.html}
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.2\textheight]{assets/images/practical/reactHTML.png}
+  \caption{Подключение React к HTML}
+  \label{img:reactHTML}
+\end{figure}
 
-\lstinputlisting[style=ES6, caption={Главный файл React-приложения}, label = {lst:reacMain}]{assets/listings/practical/index.tsx}
+Для проверки орфографии была переопределёна стандартная функция, предоставляемая Electron, доступ к которой был получен при расширении контекста процесса. Новый обработчик представлен на рисунке~\ref{img:spellCheckProvider}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=0.2\textheight]{assets/images/practical/spellCheckProvider.png}
+  \caption{Подключение React к HTML}
+  \label{img:spellCheckProvider}
+\end{figure}
+
+Полный код разработанного React-приложения приведен в листингах~\ref{lst:reacMain} и \ref{lst:reactSub}.
